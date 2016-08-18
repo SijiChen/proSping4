@@ -5,4 +5,7 @@ package springKitchen;
  */
 public interface Blender {
     boolean blend(Ingredient ingredient);
+    default void destroy(){
+        System.out.println("destroy blender...");
+    }
 }

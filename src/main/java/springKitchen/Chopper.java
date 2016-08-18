@@ -5,4 +5,7 @@ package springKitchen;
  */
 public interface Chopper {
     boolean chop (Ingredient ingredient);
+    default void destroy(){
+        System.out.println("destroy chopper...");
+    }
 }

@@ -26,7 +26,7 @@ public class SpringKitchenDemo {
 //
 //        ((CurryDishMaker)dishMaker).setDish(dish);
         dishMaker.makeDish();
-
+        context.destroy();
 
     }
 }
