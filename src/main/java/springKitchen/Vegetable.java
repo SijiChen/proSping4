@@ -16,27 +16,26 @@ public class Vegetable implements Ingredient {
 
     public Vegetable() {
     }
-    public void init(){
-        System.out.println("Initilizing vegetable "+getName());
+
+    public void init() {
+        System.out.println("Initilizing vegetable " + getName() + this.hashCode());
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setChop(boolean chop) {
-        this.chop = chop;
-    }
-
-
 
     public String getName() {
 
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public boolean isChop() {
         return chop;
+    }
+
+    public void setChop(boolean chop) {
+        this.chop = chop;
     }
 
     public boolean isBlend() {

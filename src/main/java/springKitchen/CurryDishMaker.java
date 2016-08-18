@@ -1,9 +1,5 @@
 package springKitchen;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.List;
-
 /**
  * Created by sjchen on 8/18/16.
  */
@@ -35,11 +31,11 @@ public class CurryDishMaker implements DishMaker {
     }
 
     public DishMaker makeDish() {
-        if(dish==null) {
+        if (dish == null) {
             System.out.println("no dish cooked. Please supply dish maker a dish.");
             return null;
         }
-        if(dish.getIngredientList().size()==0) {
+        if (dish.getIngredientList().size() == 0) {
             System.out.println("no ingredient in dish. Please supply dish maker a dish with ingredients.");
             return null;
         }

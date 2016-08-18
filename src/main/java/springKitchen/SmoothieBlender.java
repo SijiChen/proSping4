@@ -7,7 +7,7 @@ public class SmoothieBlender implements Blender {
 
     @Override
     public boolean blend(Ingredient ingredient) {
-        System.out.println("Smoothing..."+ingredient.getName()+ingredient.hashCode());
+        System.out.println("Smoothing..." + ingredient.getName() + ingredient.hashCode());
         return true;
     }
 }
