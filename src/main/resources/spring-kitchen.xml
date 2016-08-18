@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+    <bean id="chopper" class="springKitchen.ChunckChopper"/>
+
+    <bean id="blender" class="springKitchen.SmoothieBlender"/>
+
+    <bean id="tomato" class="springKitchen.Vegetable" scope="prototype">
+        <constructor-arg value="tomato"/>
+        <constructor-arg value="true"/>
+        <constructor-arg value="true"/>
+    </bean>
+    <bean id="onion" class="springKitchen.Vegetable" scope="prototype"
+    init-method="init">
+        <constructor-arg value="onion"/>
+        <constructor-arg value="true"/>
+        <constructor-arg value="false"/>
+    </bean>
+    <bean id="dish" class="springKitchen.Dish">
+        <property name="ingredientList" >
+            <list>
+                <ref bean="tomato"/>
+                <ref bean="tomato"/>
+                <ref bean="onion"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="curryDishMaker" class="springKitchen.CurryDishMaker" autowire="byType">
+
+        <!--
+        <property name="chopper" ref="chunkChopper"/>
+        <property name="blender" ref="crushBlender"/>
+        <constructor-arg ref="chunkChopper"/>
+        <constructor-arg ref="crushBlender"/>
+        -->
+    </bean>
+
+</beans>
