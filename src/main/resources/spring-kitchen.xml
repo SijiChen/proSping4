@@ -6,13 +6,12 @@
 
     <bean id="blender" class="springKitchen.SmoothieBlender"/>
 
-    <bean id="tomato" class="springKitchen.Vegetable" scope="prototype">
+    <bean id="tomato" class="springKitchen.Vegetable" scope="prototype" init-method="init">
         <constructor-arg value="tomato"/>
         <constructor-arg value="true"/>
         <constructor-arg value="true"/>
     </bean>
-    <bean id="onion" class="springKitchen.Vegetable" scope="prototype"
-    init-method="init">
+    <bean id="onion" class="springKitchen.Vegetable" scope="prototype" init-method="init">
         <constructor-arg value="onion"/>
         <constructor-arg value="true"/>
         <constructor-arg value="false"/>
@@ -27,7 +26,7 @@
         </property>
     </bean>
 
-    <bean id="curryDishMaker" class="springKitchen.CurryDishMaker" autowire="byType">
+    <bean id="curryDishMaker" class="springKitchen.CurryDishMaker" autowire="byName">
 
         <!--
         <property name="chopper" ref="chunkChopper"/>
